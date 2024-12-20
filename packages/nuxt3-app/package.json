@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt dev",
-    "build": "rimraf .nuxt .output && nuxt build",
-    "start": "node .output/server/index.mjs"
+    "build": "rimraf .nuxt .output && nuxt generate",
+    "start": "serve ./dist"
   },
   "devDependencies": {
     "@nuxt/webpack-builder": "^3.9.0",
@@ -13,6 +13,7 @@
     "esbuild-loader": "^4.0.2",
     "postcss-loader": "^7.3.3",
     "rimraf": "^5.0.5",
+    "serve": "^14.0.0",
     "vue": "^3.3.13",
     "webpack": "~5.89.0"
   },

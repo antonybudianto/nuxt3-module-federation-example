@@ -3,3 +3,5 @@ node_modules
 .yarn
 
 .nx/cache
+.DS_Store
+dist

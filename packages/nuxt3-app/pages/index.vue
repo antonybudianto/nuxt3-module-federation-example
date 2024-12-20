@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>This is Nuxt host</h1>
+    <section>Local count:{{ count }}</section>
+
+    <button @click="count++">just local btn</button>
 
     <remote-button class="nuxt-button">
       That is a remote button used in Nuxt!
@@ -19,6 +22,8 @@
 <script setup lang="ts">
 import { defineComponent, defineAsyncComponent, ref, onMounted } from 'vue'
 
+const count = ref(0)
+
 // eslint-disable-next-line vue/one-component-per-file
 const Error = defineComponent({
   name: 'Error',
@@ -36,14 +41,23 @@ const RemoteButton = defineAsyncComponent({
 const hydratedString = ref('')
 
 onMounted(() => {
-  hydratedString.value = 'Client hydration successful (that means the Module Federation ticket has been solved 🎉)'
+  hydratedString.value =
+    'Client hydration successful (that means the Module Federation ticket has been solved 🎉)'
 })
 </script>
 
 <style>
 .nuxt-button {
-  --app-button-bg: linear-gradient(135deg, rgb(26, 120, 176) , rgb(151, 18, 145));
-  --app-button-bg-hover: linear-gradient(135deg, rgb(26, 120, 176) , rgb(26, 120, 176));
+  --app-button-bg: linear-gradient(
+    135deg,
+    rgb(26, 120, 176),
+    rgb(151, 18, 145)
+  );
+  --app-button-bg-hover: linear-gradient(
+    135deg,
+    rgb(26, 120, 176),
+    rgb(26, 120, 176)
+  );
 }
 
 .no-display {
